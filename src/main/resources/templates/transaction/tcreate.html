@@ -19,10 +19,11 @@ and open the template in the editor.
                               <div class="form-group"> 
                                 <label for="example-transaction-pro">Pilih Nama Produk</label> 
                                 <select th:field="*{product}" class="form-control"> 
-                                    <th:block th:each="sup : ${product}"> 
-                                        <option th:text="${pro.name}" th:value="${pro.id}"></option> 
+                                    <th:block th:each="pro : ${product}"> 
+                                        <option th:text="${pro.nama}" th:value="${pro.id}"></option> 
                                     </th:block> 
                                 </select> 
+                                
                             </div> 
                             <div class="form-group"> 
                                 <label for="example-transaction-jum">Masukkan jumlah produk</label> 

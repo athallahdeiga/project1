@@ -75,7 +75,7 @@ public class TransactionController {
     @GetMapping("/transaction/{id}/tedit") 
     public String tedit(@PathVariable(value = "id") long id, Model model) { 
         List<Product> product = productInterface.getAll(); 
-        model.addAttribute("productr", product); 
+        model.addAttribute("product", product); 
          
         Transaction transaction = transactionInterface.getById(id); 
  
