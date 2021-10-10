@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="includes/base :: css"></head>
+    <body>
+        <header th:replace="includes/base :: navbar"></header>
+
+        <main role="main " class="container">
+            <div th:replace="includes/base :: head-content"></div>
+            <div class="container mt-5">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <h5 class="mb-4">Edit Product</h5>
+                        
+
+                        <form method="POST" action="#" th:action="@{/product/pstore}" th:object="${product}">
+                            <input type="hidden" th:field="*{id}" />
+                            <div class="form-group">
+                                <label for="example-product-nama">Tuliskan judul product</label>
+                                <input th:field="*{nama}" type="text" class="form-control" id="example-product-nama" aria-describedby="emailHelp" placeholder="Enter product nama product" required>
+                                <small id="emailHelp" class="form-text text-muted">Judul product minimal berisi 5 karakter.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="example-product-harga">Tuliskan harga product</label>
+                                <textarea th:field="*{harga}" rows="3" class="form-control" id="example-product-harga" aria-describedby="emailHelp" placeholder="Enter product harga product"></textarea>
+                                <small id="emailHelp" class="form-text text-muted">Kamu dapat menuliskan harga product secara detail pada kolom ini.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="example-product-stock">Tuliskan stock product</label>
+                                <textarea th:field="*{stock}" rows="3" class="form-control" id="example-product-stock" aria-describedby="emailHelp" placeholder="Enter product stock product"></textarea>
+                                <small id="emailHelp" class="form-text text-muted">Kamu dapat menuliskan stock product secara detail pada kolom ini.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="example-product-jenis">Tuliskan jenis product</label>
+                                <textarea th:field="*{jenis}" rows="3" class="form-control" id="example-product-jenis" aria-describedby="emailHelp" placeholder="Enter product jenis product"></textarea>
+                                <small id="emailHelp" class="form-text text-muted">Kamu dapat menuliskan jenis product secara detail pada kolom ini.</small>
+                            </div>
+                            
+
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+
+        <div th:replace="includes/base  :: footer"></div>
+
+        <div th:replace="includes/base  :: scripts"></div>
+    </body>
+</html>

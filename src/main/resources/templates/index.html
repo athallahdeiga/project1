@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="includes/base :: css"></head>
+    <body>
+        <header th:replace="includes/base :: navbar"></header>
+
+        <main role="main " class="container">
+            <div th:replace="includes/base :: head-content"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 mt-5">
+                        <h1>Hello, <span th:text="${session.name}"></span>!</h1>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div th:replace="includes/base  :: footer"></div>
+
+        <div th:replace="includes/base  :: scripts"></div>
+    </body>
+</html>
