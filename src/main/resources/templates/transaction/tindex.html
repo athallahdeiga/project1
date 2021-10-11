@@ -8,7 +8,7 @@ and open the template in the editor.
     <head th:replace="includes/base :: css"></head> 
     <body> 
         <header th:replace="includes/base :: navbar"></header> 
-        <main role="main " class="container"> 
+        <main role="main" style="padding-top: 5%"> 
             <div th:replace="includes/base :: head-content"></div> 
             <div class="container"> 
                 <div class="row"> 
@@ -20,7 +20,7 @@ and open the template in the editor.
                                 <th>ProductName</th> 
                                 <th>Jumlah</th> 
                                 <th>User</th> 
-                                <th>Action</th> 
+                               
                             </tr> 
                             <tr th:each="transaction : ${transactions}"> 
                                 <td th:text="${ transaction.product.nama}"></td> 
@@ -28,19 +28,7 @@ and open the template in the editor.
                                 <td th:text="${ transaction.user.name}"></td> 
                                 <td> 
                                  
-                                    <div class="btn-group " role="group " aria-lsabel="Basic example "> 
-                                        <a th:href="@{/transaction/{id}/tedit(id=${ transaction.id })}"   
-                                           class="btn btn-info text-white "> 
-                                            <i class='bx bx-pencil'></i> 
-                                        </a> 
-                                        <form onSubmit="return confirm('Do you really want to delete?')"  
-                                              method="POST" action="#"  
-                                              th:action="@{/transaction/{id}/delete(id=${ transaction.id })}"> 
-                                            <button type="submit" class="btn btn-danger text-white "> 
-                                                <i class='bx bx-trash'></i> 
-                                            </button> 
-                                        </form> 
-                                    </div> 
+
                                 </td> 
                             </tr> 
                         </table> 
