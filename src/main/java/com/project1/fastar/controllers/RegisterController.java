@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
  *
@@ -32,10 +33,26 @@ public class RegisterController {
         model.addAttribute("user", user);
 
         return "register";
-    }
+    } 
 
     @PostMapping("/register")
-    public String store(@ModelAttribute("user") User user) throws Exception {
+    public String store(@ModelAttribute("user") User user, RedirectAttributes ra) throws Exception {
+
+        if (user.getEmail().equals("")) {
+            ra.addFlashAttribute("danger", "Email cannot be null!");
+            return "redirect:/register";
+        }
+
+        if (user.getName().equals("")) {
+            ra.addFlashAttribute("danger", "Name cannot be null!");
+            return "redirect:/register";
+        }
+
+        if (user.getPassword().equals("")) {
+            ra.addFlashAttribute("danger", "Password cannot be null!");
+            return "redirect:/register";
+        }
+
         userInterface.register(user);
         return "redirect:/login";
     }

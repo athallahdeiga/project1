@@ -38,19 +38,19 @@ public class Product {
         this.nama = nama;
     }
 
-    public String getHarga() {
+    public Integer getHarga() {
         return harga;
     }
 
-    public void setHarga(String harga) {
+    public void setHarga(Integer harga) {
         this.harga = harga;
     }
 
-    public String getStock() {
+    public Integer getStock() {
         return stock;
     }
 
-    public void setStock(String stock) {
+    public void setStock(Integer stock) {
         this.stock = stock;
     }
 
@@ -60,10 +60,7 @@ public class Product {
 
     public void setJenis(String jenis) {
         this.jenis = jenis;
-    }
-
- 
-    
+    } 
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -73,10 +70,10 @@ public class Product {
     private String nama;
 
     @Column(name = "harga")
-    private String harga;
+    private Integer harga;
 
     @Column(name = "stock")
-    private String stock;
+    private Integer stock;
 
     @Column(name = "jenis")
     private String jenis;

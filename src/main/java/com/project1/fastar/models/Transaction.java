@@ -5,7 +5,6 @@
  */
 package com.project1.fastar.models;
 
-import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -50,6 +49,7 @@ public class Transaction {
     public void setJumlah(Integer jumlah) {
         this.jumlah = jumlah;
     }
+    
     @ManyToOne
     @JoinColumn(name = "id_user")
     private User user;
